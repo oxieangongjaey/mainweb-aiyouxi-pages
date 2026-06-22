@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf9f7;
+      font-family: "Noto Serif SC", "Times New Roman", serif;
+      color: #2a2a2a;
+      line-height: 1.8;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 首页横幅 */
+    .hero {
+      margin: 2.5rem 0 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e3dfd8;
+    }
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9e927f;
+      margin-bottom: 0.8rem;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      color: #1c1b18;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #5f5b53;
+      max-width: 600px;
+    }
+
+    /* 背景说明 */
+    .background-note {
+      background: #f2efe9;
+      padding: 2.2rem 2rem;
+      border-radius: 24px;
+      margin: 2.8rem 0;
+    }
+    .background-note h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: #1c1b18;
+    }
+    .background-note p {
+      color: #3f3d38;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .background-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 正文三段 */
+    .essay {
+      margin: 3rem 0;
+    }
+    .essay section {
+      margin-bottom: 2.8rem;
+    }
+    .essay h3 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #1c1b18;
+      margin-bottom: 0.8rem;
+      border-left: 3px solid #c3b7a6;
+      padding-left: 1rem;
+    }
+    .essay p {
+      color: #3f3d38;
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+    }
+
+    /* 小引用/点缀 */
+    .inset-quote {
+      margin: 2rem 0 2.8rem;
+      padding: 1.6rem 2.2rem;
+      background: #fffcf7;
+      border-left: 4px solid #c3b7a6;
+      font-style: italic;
+      color: #5b564d;
+      font-size: 1rem;
+      border-radius: 0 16px 16px 0;
+    }
+
+    /* FAQ 摘要区 */
+    .faq-mini {
+      margin: 3.5rem 0 2rem;
+      border-top: 1px solid #e3dfd8;
+      padding-top: 2.5rem;
+    }
+    .faq-mini h4 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #1c1b18;
+      margin-bottom: 1.2rem;
+    }
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+    .faq-item strong {
+      font-weight: 600;
+      color: #2a2a2a;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .faq-item p {
+      color: #5f5b53;
+      font-size: 0.95rem;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      margin-top: 4rem;
+      padding: 1.8rem 0 0.8rem;
+      border-top: 1px solid #e3dfd8;
+      font-size: 0.9rem;
+      color: #7d776b;
+      text-align: center;
+      line-height: 1.9;
+    }
+    .footer-note a {
+      color: #4d4a43;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c3b7a6;
+      transition: color 0.2s;
+    }
+    .footer-note a:hover {
+      color: #1c1b18;
+      text-decoration-color: #1c1b18;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .background-note {
+        padding: 1.6rem 1.4rem;
+      }
+      .background-note h2 {
+        font-size: 1.3rem;
+      }
+      .essay h3 {
+        font-size: 1.15rem;
+      }
+      .inset-quote {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 首页横幅 -->
+  <div class="hero">
+    <div class="hero-label">· 专题 · 文化切片</div>
+    <h1>爱游戏</h1>
+    <p>从一段像素到一片旷野，电子游戏如何成为当代人的生活注脚</p>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="background-note">
+    <h2>游戏与日常</h2>
+    <p>过去几十年，电子游戏从屏幕角落的小众消遣，逐渐演变为覆盖全年龄的媒介形式。它既承载叙事、策略与社交，也映射出人对挑战、探索和表达的深层需求。在这个转变中，「爱游戏」所指向的，不只是一个行为，更是一种文化自觉——玩家在虚拟空间里留下的每一刻，都在丰富着数字时代的集体记忆。</p>
+    <p>如今，游戏早已突破“娱乐”的单一标签，它融入教学、协作、艺术创作，甚至成为连接遥远心灵的桥梁。而这一切的起点，往往只是指尖一次简单的点击。</p>
+  </div>
+
+  <!-- 三段自然介绍 -->
+  <div class="essay">
+    <section>
+      <h3>从规则到即兴</h3>
+      <p>每一款游戏本质上都是一套规则系统，但有趣的是，玩家总能在边界内找到即兴发挥的空间。无论是精心设计的解谜，还是开放世界里的偶然探索，那种“在框架中创造意外”的体验，正是许多人一再回到游戏世界的原因。规则不是枷锁，而是供想象力起舞的舞台。</p>
+    </section>
+
+    <section>
+      <h3>共同记忆的容器</h3>
+      <p>游戏也成为一种独特的社交货币。一起通关的夜晚、对某个关卡设计的争论、甚至因为同一段配乐而产生的默契——这些片段构成了数字原住民之间的情感纽带。比起单纯的胜负，更持久的往往是那些与朋友并肩时发出的笑声。而这一切的背后，都离不开一个简单的事实：我们都曾认真投入过一段虚拟旅程。</p>
+    </section>
+
+    <section>
+      <h3>安静陪伴的角落</h3>
+      <p>并非所有游戏都追求紧张刺激。越来越多作品选择用舒缓的节奏、温暖的色调和克制的叙事，为玩家提供一个可以静心停留的地方。在这些游戏里，没有必须击败的敌人，只有等待被发现的风景和故事。它们提醒我们：游戏同样可以是疲惫生活里的一杯温茶。</p>
+    </section>
+  </div>
+
+  <!-- 点缀引用 -->
+  <div class="inset-quote">
+    “游戏从未许诺答案，但它始终在提问——你想成为谁，你愿意走向哪里。”
+  </div>
+
+  <!-- FAQ 摘要（非传统问答，而是主题延伸） -->
+  <div class="faq-mini">
+    <h4>一些常见的疑问与延伸</h4>
+    <div class="faq-item">
+      <strong>游戏会不会让人远离现实？</strong>
+      <p>适度游戏有助于释放压力、锻炼反应和决策能力，关键在于平衡。正如任何一种爱好，时间管理比媒介本身更值得关注。</p>
+    </div>
+    <div class="faq-item">
+      <strong>为什么越来越多人开始谈论“游戏文化”？</strong>
+      <p>因为游戏早已不只属于玩家。它的音乐、美术、叙事手法正在被更广泛的领域借鉴，甚至进入博物馆和课堂，成为当代文化的一部分。</p>
+    </div>
+    <div class="faq-item">
+      <strong>如何找到适合自己节奏的游戏？</strong>
+      <p>从兴趣出发：喜欢故事可以关注叙事类作品，偏爱动脑则可以尝试策略或解谜。很多平台提供试玩或社区评价，帮助做出选择。</p>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <p>如果你也对数字世界的种种可能抱有好奇，不妨多了解一些关于游戏如何影响生活的讨论。<br>
+    这里的视角来自一个始终认真对待“玩”这件事的地方——<a href="https://mainweb-aiyouxi.com.cn">爱游戏</a>。</p>
+    <p style="margin-top: 0.8rem; font-size: 0.82rem; color: #a39b8e;">— 杂志专题 · 2025 —</p>
+  </div>
+
+</div>
+</body>
+</html>
