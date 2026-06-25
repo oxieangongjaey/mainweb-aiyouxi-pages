@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 杂志专题 · 首页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #fde3b5 0%, #f8c889 30%, #f4b46a 70%, #e6974a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 4rem;
+      line-height: 1.7;
+      color: #2a1e0f;
+    }
+
+    .magazine-wrapper {
+      max-width: 1080px;
+      width: 100%;
+    }
+
+    /* 横幅 hero 区 — 暖色调杂志跨页感 */
+    .hero-banner {
+      background: linear-gradient(135deg, #ffe6c7 0%, #ffd19e 100%);
+      border-radius: 48px 48px 24px 24px;
+      padding: 2.8rem 2rem 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 40px -12px rgba(150, 70, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-banner::before {
+      content: "⚽";
+      font-size: 10rem;
+      opacity: 0.08;
+      position: absolute;
+      left: -2rem;
+      bottom: -3rem;
+      transform: rotate(-15deg);
+      pointer-events: none;
+    }
+
+    .hero-banner h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #6b3f1a;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 6px rgba(255, 215, 140, 0.6);
+    }
+
+    .hero-banner .subhead {
+      font-size: 1.3rem;
+      color: #8e5b2a;
+      background: rgba(255, 245, 225, 0.6);
+      display: inline-block;
+      padding: 0.3rem 1.8rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      font-weight: 400;
+      border: 1px solid rgba(180, 110, 30, 0.15);
+    }
+
+    .hero-banner .hero-meta {
+      margin-top: 1.3rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      font-size: 0.95rem;
+      color: #5e3f1e;
+    }
+
+    .hero-meta span {
+      background: rgba(245, 205, 145, 0.5);
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    /* 内容卡片通用设计 */
+    .card {
+      background: rgba(255, 248, 238, 0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 28px;
+      padding: 2rem 2.4rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 28px -8px rgba(110, 55, 0, 0.25);
+      border: 1px solid rgba(255, 235, 200, 0.7);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px -10px rgba(130, 60, 0, 0.3);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      color: #643f1a;
+      border-left: 6px solid #d88d45;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #7d532b;
+      margin: 1.2rem 0 0.4rem;
+      font-weight: 500;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #3f2d19;
+      font-weight: 400;
+      font-size: 1.02rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-link {
+      color: #b56118;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      padding: 0.1rem 0;
+    }
+
+    .highlight-link:hover {
+      color: #7b4010;
+      border-bottom-color: #b97b3a;
+    }
+
+    /* 圆角按钮感链接（嵌入在段落中，保留圆角背景） */
+    .btn-link {
+      display: inline-block;
+      background: #dc984b;
+      color: #2c1a07;
+      padding: 0.2rem 1rem 0.25rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: 1px solid #ca873a;
+      box-shadow: 0 2px 6px rgba(150, 70, 0, 0.2);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-link:hover {
+      background: #e6a85d;
+      transform: scale(1.02);
+      border-color: #b0712d;
+    }
+
+    .btn-link:active {
+      transform: scale(0.97);
+    }
+
+    /* 页尾 */
+    .page-footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4f351b;
+      background: rgba(250, 235, 210, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 1.4rem 2rem;
+      border-radius: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #eac391;
+    }
+
+    .page-footer p {
+      margin: 0.2rem 0;
+    }
+
+    .page-footer .small-note {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-top: 0.5rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 680px) {
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+
+      .hero-banner {
+        padding: 2rem 1.5rem 1.8rem;
+        border-radius: 32px 32px 18px 18px;
+      }
+
+      .hero-banner h1 {
+        font-size: 2rem;
+      }
+
+      .hero-banner .subhead {
+        font-size: 1rem;
+        padding: 0.2rem 1.2rem;
+      }
+
+      .card {
+        padding: 1.6rem 1.4rem;
+        border-radius: 22px;
+      }
+
+      .card h2 {
+        font-size: 1.35rem;
+        padding-left: 0.8rem;
+      }
+
+      .hero-banner::before {
+        font-size: 7rem;
+        left: -1rem;
+        bottom: -2rem;
+      }
+
+      .btn-link {
+        padding: 0.15rem 0.8rem 0.2rem;
+      }
+
+      .page-footer {
+        padding: 1rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .hero-banner h1 {
+        font-size: 1.7rem;
+      }
+      .card p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="magazine-wrapper">
+
+    <!-- 首页横幅 -->
+    <header class="hero-banner">
+      <h1>世界杯 · 足球的文明回响</h1>
+      <div class="subhead">从乌拉圭到美加墨 · 百年征程</div>
+      <div class="hero-meta">
+        <span>⚽ 2026 美加墨</span>
+        <span>🏆 48 支决赛圈队伍</span>
+        <span>🌍 全球视野</span>
+      </div>
+    </header>
+
+    <!-- 三段自然介绍：背景说明 + 两段深度内容 -->
+    <section>
+      <!-- 第一段：背景说明 —— 世界杯的起源与仪式感 -->
+      <article class="card">
+        <h2>⚽ 从蒙得维的亚的夏天说起</h2>
+        <p>
+          1930 年，第一届世界杯在乌拉圭首都蒙得维的亚揭幕。彼时，足球已在欧洲和南美扎根数十年，但直到这项全球锦标赛诞生，才真正将不同大陆的足球哲学汇聚在同一片绿茵上。世界杯不只是竞技——它是一次跨越语言、文化与政治的集体仪式。从黑白影像里的世纪进球，到如今多机位超高清直播，<strong>每一届赛事都像一面棱镜，折射出时代的面貌</strong>。
+        </p>
+        <p>
+          2026 年，世界杯将首次由美国、加拿大、墨西哥三国联合主办，同时也是扩军至 48 支球队的首届。这不仅是版图的扩张，更是赛制、日程与观赛方式的一次结构性演变。如果你对这次革新充满好奇，可以深入探索 <a href="https://apphome-fifa2026.com" class="highlight-link">世界杯</a> 的最新动态与赛事脉络。
+        </p>
+      </article>
+
+      <!-- 第二段：文化融合与战术演进 -->
+      <article class="card">
+        <h2>🏃 战术流动与文化碰撞</h2>
+        <p>
+          每隔四年，世界杯都会催生新的战术词汇：链式防守、全攻全守、tiki-taka、高位压迫……但比阵型更迷人的，是不同足球文化之间的对话。南美的即兴与灵动，欧洲的纪律与结构，非洲的原始爆发力，亚洲的快速转换——这些风格在世界杯舞台上彼此试探、融合，偶尔产生颠覆性的化学反应。
+        </p>
+        <p>
+          在 2022 年卡塔尔世界杯上，摩洛哥队用严密的防守体系和惊人的跑动距离改写非洲足球历史，而阿根廷与法国的决赛则成为近几十年来最跌宕的剧本。这些故事提醒我们：世界杯的魅力，恰恰在于它永远无法被完全预测。而即将到来的 2026 年美加墨世界杯，又将在北美大陆催生怎样的风格变局？<a href="https://apphome-fifa2026.com" class="btn-link">世界杯</a> 的专题档案里，或许藏着线索。
+        </p>
+      </article>
+
+      <!-- 第三段：球迷、城市与共同记忆 -->
+      <article class="card">
+        <h2>🌐 除了比赛：球迷、城市与共同记忆</h2>
+        <p>
+          世界杯的另一种叙事，发生在球场之外。从柏林到里约，从东京到莫斯科，主办城市在赛会期间化身地球村——街头巷尾的球迷区、不同语言的歌声、临时结成的友谊，以及深夜守在屏幕前的无数家庭。足球的魔力在于：<strong>一颗球可以让 22 个人忘掉身份差异，也可以让上亿人共享同一种心跳频率</strong>。
+        </p>
+        <p>
+          2026 年，北美大陆辽阔的国土将容纳 16 座主办城市，从西雅图到墨西哥城，从纽约到温哥华，地理跨度前所未有。这意味着球迷将有机会体验三种截然不同的足球氛围。如果你计划在这场盛会中留下自己的足迹，不妨先通过 <a href="https://apphome-fifa2026.com" class="highlight-link">世界杯</a> 了解城市分布、赛程框架与票务信息，提前构思属于自己的观赛路线。
+        </p>
+      </article>
+    </section>
+
+    <!-- FAQ 摘要 + 访问提示 -->
+    <div class="card" style="background: rgba(255, 242, 222, 0.9);">
+      <h2 style="font-size: 1.4rem;">📋 关于 2026 世界杯的简短 FAQ</h2>
+      <p><strong>Q：2026 年世界杯何时举行？</strong><br>预计于 2026 年 6 月至 7 月，由美国、加拿大、墨西哥联合举办。</p>
+      <p><strong>Q：扩军至 48 队后，赛制有哪些变化？</strong><br>小组赛将分为 16 组，每组 3 队；淘汰赛阶段随之调整，总场次增至 104 场。</p>
+      <p><strong>Q：哪里可以获取官方赛程与主办城市详情？</strong><br>可访问 <a href="https://apphome-fifa2026.com" class="btn-link">世界杯</a> 专题页面，信息聚合自国际足联及三个主办国足协的公开资料。</p>
+      <p style="margin-top: 0.8rem; font-style: italic; opacity: 0.8;">以上内容基于现有公开信息整理，实际安排以国际足联最终发布为准。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="page-footer">
+      <p>⚡ 更多深度内容、历史数据与未来前瞻，请移步专题站</p>
+      <p><a href="https://apphome-fifa2026.com" class="btn-link" style="font-size: 1.05rem;">世界杯</a> —— 从回响到共鸣</p>
+      <p class="small-note">杂志专题 · 独立视角 · 非官方信息聚合</p>
+    </footer>
+
+  </div>
+</body>
+</html>
