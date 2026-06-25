@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 赛事信息与生态指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1b1f24;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* hero 主视觉 — 信息卡片式头图 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.8rem 2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .hero:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #eef3fa;
+      color: #1f3a5f;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1a2e;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      max-width: 85%;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #3d4a5a;
+      max-width: 85%;
+    }
+
+    /* 卡片网格 — 用途卡片 + 适合人群 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f0f2f5;
+      transition: all 0.15s;
+    }
+
+    .card:hover {
+      border-color: #d6dee7;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #0b1a2e;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3d4a5a;
+      margin-bottom: 0.25rem;
+    }
+
+    .card .meta {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #7c8b9f;
+      background: #f4f6f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin-top: 0.6rem;
+    }
+
+    /* 自然链接段落区域 */
+    .context-block {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #f0f2f5;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.01);
+    }
+
+    .context-block h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b1a2e;
+      border-left: 4px solid #2b6c8f;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .context-block p {
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+      color: #2f3b4b;
+    }
+
+    .context-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .context-block a {
+      color: #1d5b7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    .context-block a:hover {
+      border-bottom-color: #1d5b7a;
+    }
+
+    /* FAQ 摘要 — 简洁，不展开 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #f0f2f5;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0b1a2e;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1f3a5f;
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      font-size: 0.92rem;
+      color: #445566;
+      margin: 0;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 极简分隔 */
+    .spacer {
+      height: 0.5rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+        max-width: 100%;
+      }
+
+      .hero p {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .context-block,
+      .faq-summary {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .context-block h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Hero / 主视觉卡片 -->
+    <div class="hero">
+      <div class="hero-badge">FIFA 2026 · 赛事周期</div>
+      <h1>世界杯：赛事图景与信息索引</h1>
+      <p>从赛程架构到观赛生态，汇集基础事实与实用线索。内容围绕全球瞩目的顶级足球盛会展开。</p>
+    </div>
+
+    <!-- 用途卡片 + 适合人群 两列 -->
+    <div class="card-grid">
+      <div class="card">
+        <h3>赛事全景卡</h3>
+        <p>赛程结构、晋级规则、主办城市与场馆概要。基于最新公布的竞赛框架整理，便于快速建立认知轮廓。</p>
+        <span class="meta">数据截至 2026</span>
+      </div>
+      <div class="card">
+        <h3>观赛辅助卡</h3>
+        <p>时区对照、直播平台聚合、票务阶段提示。为不同区域的关注者提供针对性指引。</p>
+        <span class="meta">实用索引</span>
+      </div>
+      <div class="card">
+        <h3>内容创作者</h3>
+        <p>媒体、自媒体、播客制作方可获取赛事关键词、历史对立面、话题趋势等结构素材。</p>
+        <span class="meta">选题参考</span>
+      </div>
+      <div class="card">
+        <h3>泛球迷 &amp; 新观众</h3>
+        <p>零门槛了解本届扩容背景、分组逻辑、新秀球队看点。降低认知门槛，提升观赛体验。</p>
+        <span class="meta">入门友好</span>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 —— 嵌入“世界杯” 链接 -->
+    <div class="context-block">
+      <h2>赛事生态与信息基点</h2>
+      <p>
+        国际足联世界杯自1930年创办以来，始终是全球关注度最高的单项体育赛事。2026年将首次由三个国家联合举办，决赛圈扩军至48支球队，赛制迎来历史性调整。在信息碎片化时代，集中且可靠的内容入口愈发重要。<a href="https://appm-fifa2026.com">世界杯</a>主题页面聚合了赛程、分组、赛前分析等模块，为关注者提供结构化的浏览路径。从赛历到场馆，从出线形势到核心球员动态，均可在一处查阅。
+      </p>
+      <p>
+        对于计划沉浸式关注本届赛事的使用者，了解东道主城市时区、场地容量及转播差异是前置需求。多数主流体育平台已开始部署专题板块，但深度信息仍分散于不同信源。通过统一的索引页可减少检索成本，尤其适合需要快速定位某个比赛日或对阵双方资料的用户。赛事临近时，官方与第三方数据会持续迭代，保持对信息源的关注有助于获得最新版本。
+      </p>
+      <p>
+        除直接比赛信息外，历史交锋记录、天气因素、裁判组安排等细节也可大幅提升观赛深度。在此语境下，以<a href="https://appm-fifa2026.com">世界杯</a>为锚点的内容集合不仅是一次赛事指南，更代表一种高效的信息组织方式。无论是赛前预热、实时跟进还是赛后复盘，一个清晰的入口都能让流程更加清爽。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要（紧凑式，不设展开） -->
+    <div class="faq-summary">
+      <h2>常见问题摘要</h2>
+      <div class="faq-item">
+        <strong>2026 世界杯共有多少场比赛？</strong>
+        <p>总计 104 场，其中小组赛 72 场，淘汰赛 32 场。赛程自 2026年6月11日持续至7月19日。</p>
+      </div>
+      <div class="faq-item">
+        <strong>哪些城市将承办比赛？</strong>
+        <p>分布在加拿大、墨西哥、美国共 16 个主办城市。更多细节可参考主题页面中的场馆信息区。</p>
+      </div>
+      <div class="faq-item">
+        <strong>票务申请何时开放？</strong>
+        <p>官方售票分为多个阶段：随机抽签申请、先到先得及转售平台。建议持续关注官方渠道及聚合信息页更新。</p>
+      </div>
+      <div class="faq-item">
+        <strong>48 支球队如何分组？</strong>
+        <p>初步方案为 12 个小组，每组 4 队。前两名及部分成绩最好的第三名晋级 32 强淘汰赛。</p>
+      </div>
+    </div>
+
+    <!-- 极简脚注 (无额外链接) -->
+    <div style="border-top: 1px solid #e4e8ed; margin-top: 2.5rem; padding-top: 1.2rem; font-size: 0.8rem; color: #7e8c9e; text-align: center;">
+      信息内容仅供参考 · 具体以官方公布为准
+    </div>
+  </div>
+</body>
+</html>
