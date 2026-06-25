@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专题 · 世界杯与赛事平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1d2b3e;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3.5rem 0 5rem;
+    }
+
+    /* hero area */
+    .hero {
+      margin-bottom: 3.2rem;
+      border-bottom: 2px solid #e2e9f0;
+      padding-bottom: 2rem;
+    }
+
+    .hero__label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6a7b8c;
+      background: #eef3f6;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0b1a2b;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #405b6f;
+      margin-top: 0.8rem;
+      max-width: 680px;
+    }
+
+    /* body sections */
+    .section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1a2d41;
+      margin-bottom: 0.6rem;
+      border-left: 4px solid #2f8dc6;
+      padding-left: 0.9rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #2c4054;
+      margin-bottom: 1rem;
+    }
+
+    .inset-quote {
+      background: #f1f6fa;
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      margin: 1.4rem 0;
+      font-style: normal;
+      border-left: 3px solid #93b7d3;
+    }
+
+    .inset-quote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .feature-item {
+      background: white;
+      border: 1px solid #e2e9f0;
+      border-radius: 14px;
+      padding: 1rem 1.3rem;
+      flex: 1 1 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 6px 14px rgba(0, 20, 40, 0.06);
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #16425b;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item span {
+      font-size: 0.95rem;
+      color: #3a5970;
+    }
+
+    .cta-note {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #dce4ec;
+      font-size: 1rem;
+      color: #365067;
+    }
+
+    .cta-note a {
+      color: #1a6b96;
+      text-decoration: none;
+      border-bottom: 1px solid #b6cfdf;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .cta-note a:hover {
+      color: #0a3b57;
+      border-bottom-color: #0a3b57;
+    }
+
+    .faq-mini {
+      background: #f4f7fa;
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f3850;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-mini p {
+      font-size: 0.95rem;
+      color: #2f4a60;
+      margin-bottom: 0.7rem;
+    }
+
+    .faq-mini p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footnote {
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: #7a8d9e;
+      border-top: 1px solid #e2e9f0;
+      padding-top: 2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      .page {
+        padding: 2rem 0 3.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .feature-grid {
+        flex-direction: column;
+      }
+
+      .feature-item {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 横幅 -->
+  <header class="hero">
+    <div class="hero__label">杂志专题 · 赛事架构</div>
+    <h1>世界杯与数字平台<br>从赛场到信息整合</h1>
+    <p>在每届世界杯的筹备与进行中，官方信息、赛程、球队动态与数据统计往往分散在不同区域。一个集中呈现的参考入口，能让关注者更便捷地获取核心内容。</p>
+  </header>
+
+  <!-- 第一部分：背景说明 -->
+  <section class="section">
+    <h2>为何需要整合型页面</h2>
+    <p>过去几届大赛中，球迷与从业者常面临信息碎片化的问题：赛程需要到多个来源核对，阵容变动散落于社交平台，官方公告更新后不易回溯。自2022年起，部分第三方索引站点开始尝试将公开资源按逻辑聚合，形成相对完整的导航式页面。</p>
+    <p>这类页面本身不生产独家数据，而是扮演“信息起点”的角色——将分散的官方通知、赛历、分组、场地说明等链接整理在同一框架下，降低检索时间。</p>
+    <div class="inset-quote">
+      <p>以2026年世界杯为例，赛事将首次由三国联合举办，场馆跨度、时区差异和文化背景更为复杂。一个结构清晰的索引页，对关注者而言具有实际参考价值。</p>
+    </div>
+  </section>
+
+  <!-- 第二部分：自然介绍+特点卡片 -->
+  <section class="section">
+    <h2>索引页的构成逻辑</h2>
+    <p>一个实用的赛事索引页面通常涵盖几个基础模块：主赛程日历、参赛队伍及分区、举办城市与球场简介、历史数据链接以及官方媒体通道。这些模块不追求面面俱到，而是优先保证信息的准确性与时效性。</p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>赛历与分组</strong>
+        <span>迭代更新的赛程表，包含比赛时间、场地及阶段标注，便于快速查阅。</span>
+      </div>
+      <div class="feature-item">
+        <strong>队伍与场馆</strong>
+        <span>参赛队简介、大名单来源，以及联合举办国的球场分布概览。</span>
+      </div>
+      <div class="feature-item">
+        <strong>参考链接</strong>
+        <span>指向官方公告、媒体指南及历史数据库，减少多次搜索的负担。</span>
+      </div>
+    </div>
+    <p style="margin-top: 1rem;">这样的组织方式不改变赛事本身的信息生态，只以“整理者”的视角将既有公开内容排列清晰。对于刚接触世界杯筹备阶段的用户而言，可以节省初期了解的时间成本。</p>
+  </section>
+
+  <!-- 第三部分：场景与接入提示 -->
+  <section class="section">
+    <h2>适合哪些使用场景</h2>
+    <p>无论是赛前做行程规划、比赛期间快速确认对阵，还是赛后回溯晋级路径，一个维护稳定的索引页都能提供基础支持。尤其对于需要同时关注多个队伍的媒体工作者和数据分析爱好者，统一入口的价值更加明显。</p>
+    <p>目前已有一些长期运营的索引站采用社区维护或半自动化更新机制，确保链接和日期与官方信息同步。这类页面通常不包含实时比分或直播功能，而是专注于导航与整合。</p>
+
+    <div class="faq-mini">
+      <h3>常见疑问摘要</h3>
+      <p><strong>Q：索引页上的链接来自哪里？</strong><br>多为指向国际足联官方页面、主办国组委会站点或受认可的媒体数据库，部分历史数据源于公开统计机构。</p>
+      <p><strong>Q：页面更新频率如何？</strong><br>在赛事筹备期以周为单位更新，开赛后随官方公告动态调整。建议配合官方渠道交叉确认关键信息。</p>
+    </div>
+  </section>
+
+  <!-- 页尾访问提示 (自然嵌入链接) -->
+  <div class="cta-note">
+    <p>如果你正在寻找一个结构化的赛程与球队参考起点，不妨打开 <a href="https://appindex-fifa2026.com">世界杯</a> 专题索引页，那里整理了目前已公开的主要赛事信息与官方资源。页面持续根据最新公告进行补充，适合作为日常查阅的辅助工具。</p>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footnote">
+    本页为专题介绍 · 内容基于公开赛事信息整理 · 页面仅作索引说明
+  </div>
+
+</div>
+</body>
+</html>
