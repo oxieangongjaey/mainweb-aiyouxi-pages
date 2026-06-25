@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯信息页 · 站点介绍与说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---- 深色头图 ---- */
+        .hero {
+            background: linear-gradient(145deg, #0c1a2b 0%, #1e3a5f 50%, #142b44 100%);
+            color: #f0f4fc;
+            text-align: center;
+            padding: 72px 20px 64px;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 10px;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .hero .highlight {
+            color: #60a5fa;
+        }
+
+        /* ---- 主内容区：浅色背景 ---- */
+        .main-content {
+            background: #ffffff;
+            padding: 50px 0 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: #0f172a;
+            border-left: 5px solid #3b82f6;
+            padding-left: 18px;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 40px;
+            max-width: 820px;
+        }
+
+        .intro-text a {
+            font-weight: 500;
+        }
+
+        /* ---- 三个场景卡片 ---- */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin: 30px 0 48px;
+        }
+
+        .scene-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 30px 22px 26px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: box-shadow 0.25s, transform 0.2s;
+            border: 1px solid #e9edf2;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .scene-card .emoji-badge {
+            display: inline-block;
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+        }
+
+        .scene-card p {
+            color: #475569;
+            font-size: 0.98rem;
+        }
+
+        /* ---- 常见说明 / FAQ 摘要 ---- */
+        .faq-section {
+            margin-top: 48px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 38px;
+        }
+
+        .faq-item {
+            margin-bottom: 22px;
+            border-bottom: 1px dashed #dce2ea;
+            padding-bottom: 16px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #0f172a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: "▸";
+            color: #3b82f6;
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .faq-answer {
+            color: #475569;
+            padding-left: 26px;
+        }
+
+        .faq-answer a {
+            word-break: break-all;
+        }
+
+        /* ---- 底部 ---- */
+        footer {
+            background: #eef2f6;
+            padding: 28px 0 30px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #dce3ed;
+        }
+
+        footer a {
+            color: #1e40af;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 860px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .hero {
+                padding: 48px 16px 44px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+                padding-left: 12px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>关于 世界杯 · 站点介绍</h1>
+        <p>
+            appline-fifa2026.com 是一个围绕 <span class="highlight">世界杯</span> 赛事信息整合的轻量说明站点，
+            汇集基本背景、场景参考与常见疑问，方便快速了解这个全球关注的足球盛会。
+        </p>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+
+        <!-- 核心介绍 -->
+        <h2 class="section-title">站点定位</h2>
+        <div class="intro-text">
+            <p>
+                本站并非官方组织或授权平台，而是一个由足球爱好者整理的资料型页面，旨在提供关于
+                <a href="https://appline-fifa2026.com">世界杯</a>
+                的简明介绍、观赛参考以及常见疑问的汇总。内容基于公开信息与经验整理，保持真实、平实，不渲染夸张表述。
+                若需获取最权威的赛程、票务或官方动态，建议直接查询国际足联（FIFA）官方渠道。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <h2 class="section-title">三个常见场景</h2>
+        <div class="scenes-grid">
+            <div class="scene-card">
+                <div class="emoji-badge">🏟️</div>
+                <h3>赛前了解与背景</h3>
+                <p>
+                    对于不太熟悉近年赛制变化的朋友，这里整理了世界杯发展脉络、参赛队伍概况及历届亮点，
+                    帮助快速建立整体认知。适合在比赛开始前随手翻阅。
+                </p>
+            </div>
+            <div class="scene-card">
+                <div class="emoji-badge">📋</div>
+                <h3>观赛准备参考</h3>
+                <p>
+                    包含比赛时间带、转播信息提示、以及不同阶段的对阵规则说明。
+                    虽然无法涵盖所有细节，但可以作为一个轻量的“观赛前备忘录”。
+                </p>
+            </div>
+            <div class="scene-card">
+                <div class="emoji-badge">❓</div>
+                <h3>常见疑问速览</h3>
+                <p>
+                    针对首次关注世界杯的观众可能遇到的基础问题——例如晋级规则、
+                    比赛用球、主办城市等——尽量用直白的语言给出简要解答。
+                </p>
+            </div>
+        </div>
+
+        <!-- 常见说明 / FAQ 摘要 -->
+        <div class="faq-section">
+            <h2 class="section-title">常见说明（摘要）</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">本站与 FIFA 官方是什么关系？</div>
+                <div class="faq-answer">
+                    本站是独立的非官方信息整理页，与 FIFA 或任何国家足协无隶属关系。
+                    所有关于 <a href="https://appline-fifa2026.com">世界杯</a> 的引用均基于可查证的公开资料，
+                    不发布未经核实的赛程或票务信息。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">页面内容多久更新一次？</div>
+                <div class="faq-answer">
+                    根据世界杯赛事周期及公开信息变化不定期完善。重大赛程节点前后可能会做内容补充，
+                    但无法保证实时同步所有动态。建议同时关注官方媒体获取最新消息。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">信息准确度如何？</div>
+                <div class="faq-answer">
+                    编辑人员会尽量交叉核对数据来源，但足球赛事信息庞杂（如队伍名单、举办城市细节等），
+                    仍可能存在疏漏或滞后。如果发现明显错误，欢迎通过站点提供的联系方式反馈（若页面设有联系渠道）。
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>
+            本页仅作信息介绍 · 关于 <a href="https://appline-fifa2026.com">世界杯</a> 的更多内容请参考原始站点
+        </p>
+        <p style="margin-top: 6px; color: #7e8a98;">非官方 · 信息整理参考页</p>
+    </div>
+</footer>
+
+</body>
+</html>
