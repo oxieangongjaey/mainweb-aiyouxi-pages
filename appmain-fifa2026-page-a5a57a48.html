@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 专题速览 | 2026 赛程与数据中枢</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f7f4;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* hero */
+    .hero {
+      padding: 80px 0 40px;
+      border-bottom: 1px solid #dddacf;
+    }
+
+    .hero__tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #7f7b72;
+      background: #edeae2;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #0b0a09;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #4b4843;
+      max-width: 600px;
+    }
+
+    /* 背景说明 */
+    .context {
+      margin: 48px 0;
+      padding: 32px 0 24px;
+      border-bottom: 1px solid #dddacf;
+    }
+
+    .context h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+      color: #1e1e1e;
+    }
+
+    .context p {
+      font-size: 1rem;
+      color: #3b3a36;
+      margin-bottom: 18px;
+    }
+
+    .context a {
+      color: #b78c4b;
+      text-decoration: none;
+      border-bottom: 1px solid #dec99e;
+      font-weight: 450;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .context a:hover {
+      color: #8f6f38;
+      border-bottom-color: #8f6f38;
+    }
+
+    /* 三段自然介绍 */
+    .features {
+      margin: 40px 0 48px;
+    }
+
+    .feature-item {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e5e1d9;
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .feature-item h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #1e1e1e;
+    }
+
+    .feature-item p {
+      font-size: 0.975rem;
+      color: #3e3c38;
+      margin-bottom: 12px;
+    }
+
+    .feature-item .meta-note {
+      font-size: 0.8rem;
+      color: #8a867e;
+      letter-spacing: 0.02em;
+      display: inline-block;
+      background: #f0ede8;
+      padding: 2px 12px;
+      border-radius: 30px;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      margin: 48px 0 64px;
+      padding-top: 32px;
+      border-top: 1px solid #dddacf;
+      text-align: center;
+    }
+
+    .footer-note p {
+      font-size: 1rem;
+      color: #3b3a36;
+      margin-bottom: 6px;
+    }
+
+    .footer-note .link-wrapper {
+      margin-top: 16px;
+    }
+
+    .footer-note a {
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2a2825;
+      text-decoration: none;
+      border: 1px solid #cbc6bc;
+      padding: 10px 28px;
+      border-radius: 60px;
+      background: #f5f2ec;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      background: #ede9e1;
+      border-color: #a99f92;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 56px 0 28px;
+      }
+
+      .feature-item h3 {
+        font-size: 1.1rem;
+      }
+
+      .page {
+        padding: 0 18px;
+      }
+
+      .footer-note a {
+        font-size: 1rem;
+        padding: 8px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <span class="hero__tag">专题 · 2026</span>
+      <h1>赛程、阵容与数据，<br>一站理清。</h1>
+      <p>当全球目光聚焦于新一届 <a href="https://appmain-fifa2026.com" style="color:#b78c4b; text-decoration:underline; text-underline-offset:2px;">世界杯</a>，你需要一个能快速定位赛程、球队动态与历史数据的工具，而非在碎片信息中反复跳转。</p>
+    </header>
+
+    <!-- 背景说明 -->
+    <section class="context">
+      <h2>为何需要这个站点？</h2>
+      <p>每届 <a href="https://appmain-fifa2026.com" style="color:#b78c4b; text-decoration:underline; text-underline-offset:2px;">世界杯</a> 周期内，官方信息分散在多语言子站、社交平台与新闻流中。对于希望直接获取结构化赛程、完整参赛名单以及历年交锋记录的球迷或分析师来说，一个整合型入口比搜索引擎更高效。</p>
+      <p>appmain-fifa2026.com 的设计初衷正是作为赛事数据中枢——不堆砌广告，不制造冗余，只展示经过归类的赛程时间表、小组形势与球队档案，方便你随时核对、规划和回看。</p>
+    </section>
+
+    <!-- 三段自然介绍 -->
+    <section class="features">
+      <div class="feature-item">
+        <h3>赛程地图 · 时间一目了然</h3>
+        <p>从小组赛到决赛，每场比赛均以本地时间与主办城市对照呈现。你还可以按轮次、小组或球队名称快速筛选，不再需要手动换算时区或翻阅长列表。</p>
+        <span class="meta-note">覆盖全部 104 场赛事</span>
+      </div>
+
+      <div class="feature-item">
+        <h3>球队与球员档案</h3>
+        <p>每支决赛圈球队均附有 26 人初选名单、平均年龄、预选赛战绩及近三届世界杯表现。部分核心球员附带基础数据（出场、进球、助攻），方便横向对比。</p>
+        <span class="meta-note">数据更新至 2026 年 4 月</span>
+      </div>
+
+      <div class="feature-item">
+        <h3>历史交锋与纪录检索</h3>
+        <p>内置轻量级数据库，支持查询任意两支参赛队的历史交锋记录（含友谊赛与正式比赛）。同时提供本届夺冠赔率、主办城市球场容量等辅助信息，让赛前分析更扎实。</p>
+        <span class="meta-note">历史数据回溯至 1998 年</span>
+      </div>
+    </section>
+
+    <!-- 页尾访问提示 -->
+    <footer class="footer-note">
+      <p>如需查看完整赛程、球队名单与实时数据，可直接前往</p>
+      <div class="link-wrapper">
+        <a href="https://appmain-fifa2026.com">世界杯</a>
+      </div>
+      <p style="margin-top: 24px; font-size: 0.85rem; color: #8a867e;">页面信息仅供参考，实际赛程以主办方最终公布为准。</p>
+    </footer>
+  </div>
+</body>
+</html>
